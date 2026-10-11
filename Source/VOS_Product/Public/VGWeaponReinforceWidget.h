@@ -1,0 +1,61 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EVGWeaponReinforceWidgetMode.h"
+#include "VGGridItem.h"
+#include "VGShopWidgetBase.h"
+#include "VGTextSymbol.h"
+#include "VGWeaponReinforceWidget.generated.h"
+
+class UVGGoodsInfo;
+class UVGItemParamWidget;
+class UVGShopInventoryData;
+class UVGTabbedListView;
+class UVGWidget;
+
+UCLASS(Blueprintable, EditInlineNew)
+class VOS_PRODUCT_API UVGWeaponReinforceWidget : public UVGShopWidgetBase {
+    GENERATED_BODY()
+public:
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    FVGTextSymbol m_weapon_division_text[9];
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint32 m_shop_sort_method_all;
+    
+    UPROPERTY(EditAnywhere, meta=(AllowPrivateAccess=true))
+    uint32 m_shop_sort_method;
+    
+protected:
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGTabbedListView* m_tv_items;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGTabbedListView* m_tv_recipe;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGGoodsInfo* m_ui_info;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGWidget* m_ui_header;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGItemParamWidget* m_ui_comp;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, Instanced, meta=(AllowPrivateAccess=true))
+    UVGItemParamWidget* m_ui_result;
+    
+    UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
+    UVGShopInventoryData* m_inventory;
+    
+public:
+    UVGWeaponReinforceWidget();
+
+    UFUNCTION(BlueprintCallable)
+    static void StringToMaterialGridItems(const FString& value, TArray<FVGGridItem>& OutVal);
+    
+protected:
+    UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+    void OnModeChanged(EVGWeaponReinforceWidgetMode::Type mode);
+    
+};
+

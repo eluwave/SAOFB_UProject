@@ -1,0 +1,5 @@
+#include "VGCharacterFigureSettingGeneratorConfigBoneEntry.h"
+
+FVGCharacterFigureSettingGeneratorConfigBoneEntry::FVGCharacterFigureSettingGeneratorConfigBoneEntry() {
+}
+

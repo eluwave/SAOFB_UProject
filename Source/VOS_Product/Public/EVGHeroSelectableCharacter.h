@@ -1,0 +1,47 @@
+#pragma once
+#include "CoreMinimal.h"
+#include "EVGHeroSelectableCharacter.generated.h"
+
+UENUM(BlueprintType)
+enum class EVGHeroSelectableCharacter : uint8 {
+    Kirito,
+    Kiriko,
+    Asuna,
+    Sinon,
+    Leafa,
+    Lisbeth,
+    Silica,
+    Yuuki,
+    Argo,
+    Klein,
+    Agil,
+    Kureha,
+    Zeliska,
+    Itsuki,
+    BazaltJoe,
+    LLENN,
+    Fukaziroh,
+    Pitohui,
+    M,
+    Premiere,
+    Strea,
+    Philia,
+    Rain,
+    Yamikaze,
+    MusketeerX,
+    Dyne,
+    Shirley,
+    Clarence,
+    Alice,
+    Eugeo,
+    Subtilizer,
+    Sterben,
+    Lievre,
+    Seven,
+    Yuna,
+    Eiji,
+    Sachi,
+    Num,
+    None,
+};
+
